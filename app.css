@@ -1,0 +1,26 @@
+.im-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 14px; align-items: start; }
+@media (max-width: 880px) { .im-grid { grid-template-columns: minmax(0, 1fr); } }
+.im-left, .im-right { min-width: 0; grid-template-columns: minmax(0, 1fr); }
+.im-stage { display: grid; place-items: center; padding: 28px; border-radius: 14px; border: 1px solid var(--line); }
+.im-stage canvas { width: min(320px, 100%); height: auto; aspect-ratio: 1; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
+.im-minis { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; }
+.im-mini { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 14px; border-radius: 12px; border: 1px solid var(--line); }
+.im-mini.light { background: #f3f4f6; }
+.im-mini.dark { background: #15181d; }
+.im-home { display: grid; justify-items: center; gap: 6px; padding: 12px 18px; border-radius: 12px; border: 1px solid var(--line);
+  background: linear-gradient(160deg, #3a2f6b, #0f3b4a); color: #fff; font-size: 12px; font-weight: 550; }
+.im-home canvas { width: 60px !important; height: 60px !important; }
+.im-home span { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 560px) { .im-minis { grid-template-columns: 1fr 1fr; } .im-home { grid-column: 1 / -1; } .im-mini { gap: 8px; padding: 10px; } }
+div.field { display: grid; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-2); }
+.field > .seg { justify-self: start; }
+.field .faint { font-weight: 500; }
+.im-text { font-size: 22px; font-weight: 650; text-align: center; }
+.im-picks { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+.im-pick { height: 36px; border-radius: 9px; font-size: 19px; background: var(--surface-2); border: 1px solid var(--line); transition: background var(--dur), transform 120ms; }
+.im-pick:hover { background: var(--surface-3); transform: translateY(-1px); }
+.im-pair { align-items: end; flex-wrap: nowrap; }
+.im-pair .field { min-width: 0; }
+.im-presets { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
+.im-preset { aspect-ratio: 1; border-radius: 9px; border: 1px solid var(--line-strong); transition: transform 120ms; }
+.im-preset:hover { transform: scale(1.08); }
